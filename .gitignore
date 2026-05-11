@@ -1,6 +1,6 @@
 HELP.md
 target/
-java-mysql-mcp.jar
+java-db-mcp.jar
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/

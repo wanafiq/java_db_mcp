@@ -2,16 +2,15 @@ spring:
   main:
     banner-mode: off
     web-application-type: none
+  profiles:
+    active: ${DB_TYPE:mysql}
   ai:
     mcp:
       server:
-        name: java-mysql-mcp
+        name: java-db-mcp
         version: 0.0.1
         stdio: true
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:}
-    username: ${MYSQL_USER:root}
-    password: ${MYSQL_PASSWORD:}
     hikari:
       maximum-pool-size: 10
       connection-test-query: SELECT 1
@@ -20,12 +19,31 @@ spring:
       idle-timeout: 600000
 
 mcp:
-  permissions:
-    allow-insert: ${ALLOW_INSERT:false}
-    allow-update: ${ALLOW_UPDATE:false}
-    allow-delete: ${ALLOW_DELETE:false}
-    allow-ddl: ${ALLOW_DDL:false}
+  pagination:
+    max-rows: ${MAX_ROWS:500}
+  db:
+    type: ${DB_TYPE:mysql}
+  sql:
+    permissions:
+      allow-insert: ${SQL_ALLOW_INSERT:false}
+      allow-update: ${SQL_ALLOW_UPDATE:false}
+      allow-delete: ${SQL_ALLOW_DELETE:false}
+      allow-ddl: ${SQL_ALLOW_DDL:false}
+  mongo:
+    permissions:
+      allow-write: ${MONGO_ALLOW_WRITE:false}
+      allow-delete: ${MONGO_ALLOW_DELETE:false}
+      allow-admin: ${MONGO_ALLOW_ADMIN:false}
+  redis:
+    permissions:
+      allow-write: ${REDIS_ALLOW_WRITE:false}
+      allow-admin: ${REDIS_ALLOW_ADMIN:false}
+  es:
+    permissions:
+      allow-write: ${ES_ALLOW_WRITE:false}
+      allow-delete: ${ES_ALLOW_DELETE:false}
+      allow-admin: ${ES_ALLOW_ADMIN:false}
 
 logging:
   file:
-    name: ${LOG_FILE:${java.io.tmpdir}/java-mysql-mcp.log}
+    name: ${LOG_FILE:${java.io.tmpdir}/java-db-mcp.log}

@@ -5,18 +5,18 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>4.0.5</version>
+		<version>4.0.6</version>
 		<relativePath/>
 	</parent>
 	<groupId>com.wmatech</groupId>
-	<artifactId>java-mysql-mcp</artifactId>
+	<artifactId>java-db-mcp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>java-mysql-mcp</name>
-	<description>Java Spring Boot MCP server for MySQL database operations</description>
+	<name>java-db-mcp</name>
+	<description>Java Spring Boot MCP server for database operations</description>
 
 	<properties>
 		<java.version>25</java.version>
-		<spring-ai.version>2.0.0-M4</spring-ai.version>
+		<spring-ai.version>2.0.0-M6</spring-ai.version>
 		<jsqlparser.version>5.3</jsqlparser.version>
 		<testcontainers.version>1.21.4</testcontainers.version>
 	</properties>
@@ -54,6 +54,25 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- PostgreSQL JDBC driver -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+		<!-- MongoDB driver (sync) -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongodb-driver-sync</artifactId>
+		</dependency>
+
+		<!-- Redis client (Jedis) -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+
 		<!-- SQL parsing -->
 		<dependency>
 			<groupId>com.github.jsqlparser</groupId>
@@ -82,7 +101,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>java-mysql-mcp</finalName>
+		<finalName>java-db-mcp</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

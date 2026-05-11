@@ -1,0 +1,2 @@
+org.springframework.boot.EnvironmentPostProcessor=\
+com.wmatech.java_db_mcp.config.AutoconfigExclusions
