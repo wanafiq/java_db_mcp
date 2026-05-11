@@ -1,0 +1,83 @@
+{
+  "mcpServers": {
+    "mysql": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "/absolute/path/to/java-db-mcp.jar"
+      ],
+      "env": {
+        "DB_TYPE": "mysql",
+        "DB_HOST": "127.0.0.1",
+        "DB_PORT": "3306",
+        "DB_USER": "root",
+        "DB_PASSWORD": "your-password",
+        "DB_NAME": "your-database",
+        "MAX_ROWS": "500",
+        "SQL_ALLOW_INSERT": "false",
+        "SQL_ALLOW_UPDATE": "false",
+        "SQL_ALLOW_DELETE": "false",
+        "SQL_ALLOW_DDL": "false"
+      }
+    },
+    "postgres": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "/absolute/path/to/java-db-mcp.jar"
+      ],
+      "env": {
+        "DB_TYPE": "postgres",
+        "DB_HOST": "127.0.0.1",
+        "DB_PORT": "5432",
+        "DB_USER": "postgres",
+        "DB_PASSWORD": "your-password",
+        "DB_NAME": "your-database",
+        "MAX_ROWS": "500",
+        "SQL_ALLOW_INSERT": "false",
+        "SQL_ALLOW_UPDATE": "false",
+        "SQL_ALLOW_DELETE": "false",
+        "SQL_ALLOW_DDL": "false"
+      }
+    },
+    "redis": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "/absolute/path/to/java-db-mcp.jar"
+      ],
+      "env": {
+        "DB_TYPE": "redis",
+        "DB_HOST": "127.0.0.1",
+        "DB_PORT": "6379",
+        "DB_USER": "",
+        "DB_PASSWORD": "",
+        "REDIS_DB": "0",
+        "REDIS_SSL": "false",
+        "REDIS_SSL_INSECURE": "false",
+        "REDIS_ALLOW_WRITE": "false",
+        "REDIS_ALLOW_ADMIN": "false"
+      }
+    },
+    "elasticsearch": {
+      "command": "java",
+      "args": [
+        "-jar",
+        "/absolute/path/to/java-db-mcp.jar"
+      ],
+      "env": {
+        "DB_TYPE": "elasticsearch",
+        "DB_URI": "",
+        "DB_HOST": "127.0.0.1",
+        "DB_PORT": "9200",
+        "DB_USER": "elastic",
+        "DB_PASSWORD": "your-password",
+        "ES_API_KEY": "",
+        "MAX_ROWS": "500",
+        "ES_ALLOW_WRITE": "false",
+        "ES_ALLOW_DELETE": "false",
+        "ES_ALLOW_ADMIN": "false"
+      }
+    }
+  }
+}
